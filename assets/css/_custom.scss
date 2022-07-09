@@ -2,3 +2,15 @@
 // Custom style
 // 自定义样式
 // ==============================
+
+
+// limiting gist height
+.gist-data {
+    font-family: "Syne Mono", "Cascadia Code", "FiraCode NF" ;
+    overflow: scroll;
+    max-height: 74vh;
+}
+
+.single .content img {
+    min-height: 60vh;
+}
