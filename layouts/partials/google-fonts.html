@@ -1,0 +1,44 @@
+<!-- In your partials folder -->
+
+{{ if .Site.Params.google_fonts }}
+    {{ $fonts := slice }}
+    {{ range .Site.Params.google_fonts }}
+        {{ $family := replace (index (.)  0) " " "+" }}
+        {{ $weights := replace (index (.) 1) " " "" }}
+        {{ $string := print $family ":" $weights }}
+        {{ $fonts = $fonts | append $string }}
+    {{ end }}
+    {{ $url_part := (delimit $fonts "|") | safeHTMLAttr }}
+    <link {{ printf "href=\"//fonts.googleapis.com/css?family=%s\"" $url_part | safeHTMLAttr }} rel="stylesheet">
+{{ else}}
+    <!-- specify a default in case custom config not present -->
+    <link 
+        rel="preconnect" 
+        href="https://fonts.googleapis.com"
+    />
+    
+    <link 
+        rel="preconnect" 
+        href="https://fonts.gstatic.com" crossorigin
+    />
+    
+    <link
+        rel="preload"
+        as="style"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Syne+Mono&display=swap"
+    />
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Syne+Mono&display=swap" 
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'"
+    />
+
+    <noscript>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Syne+Mono&display=swap"
+        />
+    </noscript>
+{{ end }}

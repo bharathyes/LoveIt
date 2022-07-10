@@ -90,6 +90,10 @@ header {
     position: absolute;
     left: auto;
     right: 1rem;
+    color: indianred;
+  }
+  .search-button:hover {
+    color: #42b05c;
   }
 
   .search-toggle {
@@ -163,6 +167,7 @@ header {
     }
 
     .menu {
+      font-family: 'Syne Mono';
       overflow: hidden;
       white-space: nowrap;
 

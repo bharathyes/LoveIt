@@ -1,16 +1,56 @@
 // ==============================
 // Custom style
-// 自定义样式
 // ==============================
-
 
 // limiting gist height
 .gist-data {
-    font-family: "Syne Mono", "Cascadia Code", "FiraCode NF" ;
-    overflow: scroll;
-    max-height: 74vh;
+  overflow: scroll;
+  max-height: 74vh;
+}
+
+.blob-code-inner {
+  font-family: "Cascadia Code", "FiraCode NF" !important;
 }
 
 .single .content img {
-    min-height: 60vh;
+  min-height: 60vh;
+}
+
+h1 {
+  font-family: "Syne Mono";
+}
+
+h2,
+h3 {
+  font-family: "Syne Mono";
+}
+
+.page.single h1 {
+  text-decoration: #42b05c wavy underline;
+}
+
+.page.single h2,
+.page.single h3 {
+  text-decoration: #42b05c dotted underline;
+}
+
+.card-item-title a {
+	color: #42b05c !important;
+}
+
+
+@media (min-width: 680px) {
+  .page.single h1 {
+    margin-left: -74px !important;
+  }
+
+  .page.single h2,
+  .page.single h3 {
+    margin-left: -47px !important;
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+  }
 }
