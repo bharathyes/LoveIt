@@ -9,11 +9,14 @@
 }
 
 .blob-code-inner {
-  font-family: "Cascadia Code", "FiraCode NF" !important;
+  font-family: "Cascadia Code", "FiraCode NF", "Fira Code" !important;
 }
 
 .single .content img {
-  min-height: 60vh;
+  // min-height: 60vh;
+  max-height: 50vh;
+  min-width: min(90%);
+  background-color: #fff;
 }
 
 h1 {
@@ -22,7 +25,7 @@ h1 {
 
 h2,
 h3 {
-  font-family: "Syne Mono";
+  font-family: "Karla", "Syne Mono";
 }
 
 .page.single h1 {
@@ -35,9 +38,31 @@ h3 {
 }
 
 .card-item-title a {
-	color: #42b05c !important;
+  color: #42b05c !important;
 }
 
+// spin animation on code copy button
+.code-header .copy.spinEffect {
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 @media (min-width: 680px) {
   .page.single h1 {
